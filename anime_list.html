@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Listesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="page-top">
+            <div>
+                <p class="eyebrow">Anime rehberi</p>
+                <h1><em>Anime Listesi</em></h1>
+                <p class="hero-note">Bu listede 100 farklı anime başlığı yer alır. Alttaki arama alanı ile hızlıca bulabilirsin.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.1.html">Yönlendirme</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-area">
+            <input id="search" class="search-input" type="search" placeholder="Anime ara...">
+        </section>
+
+        <section class="anime-list" id="animeGrid"></section>
+    </main>
+
+    <footer>
+        <div>Tüm Animelerimiz | NatAnimo</div>
+        <small>Fatih tarafından hazırlanmıştır.</small>
+    </footer>
+
+    <script>
+        const availableImages = {
+            "Naruto": "HTML kart/Naruto.jpg",
+            "One Piece": "HTML kart/onepiece.jpg",
+            "Attack on Titan": "HTML kart/aott.jpg",
+            "My Hero Academia": "HTML kart/myheroacedemia.jpg",
+            "Demon Slayer": "HTML kart/demonslayerr.jpg",
+            "Tokyo Ghoul": "HTML kart/Tokyo Ghoul.jpg",
+            "Black Clover": "HTML kart/Black Clover.jpg",
+            "Fairy Tail": "HTML kart/Fairy Tail.jpg",
+            "Bleach": "HTML kart/bleach.jpg",
+            "Hunter x Hunter": "HTML kart/hunterxhunter.jpg",
+            "Fullmetal Alchemist": "HTML kart/fullmetal.jpg",
+            "Tokyo Revengers": "HTML kart/Tokyo Revengers_ Toman.jpg",
+            "Jujutsu Kaisen": "HTML kart/jujutsukaisen.jpg",
+            "Mob Psycho 100": "HTML kart/mobpyscho100.jpg",
+            "Death Note": "HTML kart/deathnote.jpg",
+            "Code Geass": "HTML kart/codegeas.jpg",
+            "Steins;Gate": "HTML kart/steinsgate.jpg",
+            "Haikyuu!": "HTML kart/Haikyu!!.jpg",
+            "Sword Art Online": "HTML kart/swordart.jpg",
+            "Your Name": "HTML kart/Your Name.jpg",
+            "Violet Evergarden": "HTML kart/violet.jpg",
+            "Re:Zero": "HTML kart/rezero.jpg",
+            "Kaguya-sama: Love is War": "HTML kart/kaguyasama.jpg",
+            "No Game No Life": "HTML kart/nogame.jpg",
+            "One Punch Man": "HTML kart/onepunch.jpg",
+            "Seven Deadly Sins": "HTML kart/sevendeadly.jpg",
+            "Black Lagoon": "HTML kart/blacklagoon.jpg",
+            "Akira": "HTML kart/Akira.jpg",
+            "Ghost in the Shell": "HTML kart/ghostinshell.jpg",
+            "Weathering with You": "HTML kart/weather.jpg",
+            "Spirited Away": "HTML kart/spireited.jpg",
+            "Howl's Moving Castle": "HTML kart/howlsmoving.jpg",
+            "Princess Mononoke": "HTML kart/priencs.jpg",
+            "Cowboy Bebop": "HTML kart/covboy.jpg",
+            "Samurai Champloo": "HTML kart/samurai.jpg",
+            "Erased": "HTML kart/Erased.jpg",
+            "Gintama": "HTML kart/gintama.jpg",
+            "Clannad": "HTML kart/clannad.jpg",
+            "Toradora!": "HTML kart/toradora.jpg",
+            "Anohana": "HTML kart/anohona.jpg",
+            "Made in Abyss": "HTML kart/madeinabyss.jpg",
+            "Fruits Basket": "HTML kart/fruitsbasket.jpg",
+            "Elfen Lied": "HTML kart/elfenlefield.jpg",
+            "Parasyte": "HTML kart/parasytle.jpg",
+            "Great Pretender": "HTML kart/Great Pretender.jpg",
+            "Yuri on Ice": "HTML kart/yurionice.jpg",
+            "K-On!": "HTML kart/kon.jpg",
+            "ReLIFE": "HTML kart/relıfe.jpg",
+            "Black Butler": "HTML kart/blackbutler.jpg",
+            "Fate/Zero": "HTML kart/fatezero.jpg",
+            "Fate/Stay Night": "HTML kart/fatestaynight.jpg",
+            "Rascal Does Not Dream of Bunny Girl Senpai": "HTML kart/bunnygirl.jpg",
+            "Berserk": "HTML kart/berserk.jpg",
+            "JoJo's Bizarre Adventure": "HTML kart/jojobizarre.jpg",
+            "The Promised Neverland": "HTML kart/promisedneverland.jpg",
+            "Your Lie in April": "HTML kart/yourlie.jpg",
+            "The Rising of the Shield Hero": "HTML kart/shieldhero.jpg",
+            "Dorohedoro": "HTML kart/dorohedoro.jpg",
+            "Psycho-Pass": "HTML kart/pyschopats.jpg",
+            "Akame ga Kill": "HTML kart/akamegakill.jpg",
+            "Blue Exorcist": "HTML kart/blueexorcist.jpg",
+            "Death Parade": "HTML kart/deathparade.jpg",
+            "Hellsing Ultimate": "HTML kart/hellsing.jpg",
+            "The Boy and the Beast": "HTML kart/boyandbeat.jpg",
+            "Summer Wars": "HTML kart/summerwars.jpg",
+            "Tengen Toppa Gurren Lagann": "HTML kart/tengentoppa.jpg",
+            "Kill la Kill": "HTML kart/killlakill.jpg",
+            "Little Witch Academia": "HTML kart/littlewitch.jpg",
+            "Kakegurui": "HTML kart/kakegurui.jpg",
+            "Nausicaä of the Valley of the Wind": "HTML kart/nausica.jpg",
+            "Paprika": "HTML kart/paprika.jpg",
+            "The Wind Rises": "HTML kart/thewind.jpg",
+            "Suzume": "HTML kart/suzume.jpg",
+            "Made in Abyss: The Golden City of the Scorching Sun": "HTML kart/madeinabbys.jpg",
+            "Spy x Family": "HTML kart/spyxfamily.jpg",
+            "The Ancient Magus' Bride":  "HTML kart/theanticent.jpg",
+            "Aggretsuko": "HTML kart/agretsuko.jpg",
+            "Fate/Apocrypha": "HTML kart/aporcyt.jpg",
+            "Beastars": "HTML kart/beastars.jpg",
+            "Kino's Journey": "HTML kart/kinos.jpg",
+            "A Silent Voice": "HTML kart/asilent.jpg",
+            "The Devil is a Part-Timer!": "HTML kart/parttime.jpg",
+            "Oshi no Ko": "HTML kart/oshinoko.jpg",
+            "The Quintessential Quintuplets": "HTML kart/thequint.jpg",
+            "Dr. Stone": "HTML kart/drstone.jpg",
+            "Re:Creators": "HTML kart/recreator.jpg",
+            "Deca-Dence": "HTML kart/decadance.jpg",
+            "Made in Abyss: Dawn of the Deep Soul": "HTML kart/madeinabbysdovn.jpg",
+            "Komi Can't Communicate": "HTML kart/komicant.jpg",
+            "Terror in Resonance": "HTML kart/teror.jpg",
+            "Vivy -Fluorite Eye's Song-": "HTML kart/vivy.jpg",
+            "Monster": "HTML kart/monster.jpg",
+            "Spice and Wolf": "HTML kart/spiceand.jpg",
+            "Yona of the Dawn": "HTML kart/yonaof.jpg",
+            "Golden Time": "HTML kart/goldentime.jpg",
+            "Redline Pilot": "HTML kart/redline.jpg"
+        };
+
+        const detailLinks = {
+            "Naruto": "naruto_anlatım.html",
+            "Akame ga Kill": "akame_ga_kill.html"
+        };
+
+        const animeTitles = [
+            "Naruto",
+            "One Piece",
+            "Attack on Titan",
+            "My Hero Academia",
+            "Demon Slayer",
+            "Tokyo Ghoul",
+            "Black Clover",
+            "Fairy Tail",
+            "Bleach",
+            "Hunter x Hunter",
+            "Fullmetal Alchemist",
+            "Tokyo Revengers",
+            "Jujutsu Kaisen",
+            "Mob Psycho 100",
+            "Death Note",
+            "Code Geass",
+            "Steins;Gate",
+            "Haikyuu!",
+            "Sword Art Online",
+            "Your Name",
+            "Violet Evergarden",
+            "Re:Zero",
+            "Kaguya-sama: Love is War",
+            "No Game No Life",
+            "One Punch Man",
+            "Seven Deadly Sins",
+            "Black Lagoon",
+            "Akira",
+            "Ghost in the Shell",
+            "Weathering with You",
+            "Spirited Away",
+            "Howl's Moving Castle",
+            "Princess Mononoke",
+            "Cowboy Bebop",
+            "Samurai Champloo",
+            "Erased",
+            "Gintama",
+            "Clannad",
+            "Toradora!",
+            "Anohana",
+            "Made in Abyss",
+            "Fruits Basket",
+            "Elfen Lied",
+            "Parasyte",
+            "Great Pretender",
+            "Yuri on Ice",
+            "K-On!",
+            "ReLIFE",
+            "Black Butler",
+            "Fate/Zero",
+            "Fate/Stay Night",
+            "Rascal Does Not Dream of Bunny Girl Senpai",
+            "Berserk",
+            "JoJo's Bizarre Adventure",
+            "The Promised Neverland",
+            "Your Lie in April",
+            "The Rising of the Shield Hero",
+            "Dorohedoro",
+            "Psycho-Pass",
+            "Akame ga Kill",
+            "Blue Exorcist",
+            "Death Parade",
+            "Hellsing Ultimate",
+            "The Boy and the Beast",
+            "Summer Wars",
+            "Tengen Toppa Gurren Lagann",
+            "Kill la Kill",
+            "Little Witch Academia",
+            "Kakegurui",
+            "Nausicaä of the Valley of the Wind",
+            "Paprika",
+            "The Wind Rises",
+            "Suzume",
+            "Made in Abyss: The Golden City of the Scorching Sun",
+            "Spy x Family",
+            "The Ancient Magus' Bride",
+            "Aggretsuko",
+            "Fate/Apocrypha",
+            "Beastars",
+            "Kino's Journey",
+            "A Silent Voice",
+            "The Devil is a Part-Timer!",
+            "Oshi no Ko",
+            "The Quintessential Quintuplets",
+            "Dr. Stone",
+            "Re:Creators",
+            "Deca-Dence",
+            "Made in Abyss: Dawn of the Deep Soul",
+            "Komi Can't Communicate",
+            "Terror in Resonance",
+            "Vivy -Fluorite Eye's Song-",
+            "Monster",
+            "Spice and Wolf",
+            "Yona of the Dawn",
+            "Golden Time",
+            "Redline Pilot"
+        ];
+
+        const grid = document.getElementById('animeGrid');
+
+        function createCard(title) {
+            const link = detailLinks[title];
+            const card = document.createElement(link ? 'a' : 'article');
+            card.className = 'anime-card';
+            if (link) {
+                card.href = link;
+            }
+            const src = availableImages[title] || `https://via.placeholder.com/420x240?text=${encodeURIComponent(title)}`;
+            card.innerHTML = `
+                <img src="${src}" alt="${title}" loading="lazy">
+                <h3>${title}</h3>
+            `;
+            return card;
+        }
+
+        function renderList(items) {
+            grid.innerHTML = '';
+            items.forEach(title => grid.appendChild(createCard(title)));
+        }
+
+        renderList(animeTitles);
+
+        document.getElementById('search').addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            const filtered = animeTitles.filter(title => title.toLowerCase().includes(query));
+            renderList(filtered);
+        });
+    </script>
+    <p>Şuan az olabilir, daha fazla ekleyeceğim.</p>
+</body>
+</html>
