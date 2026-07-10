@@ -7,56 +7,80 @@
 </head>
 <body>
     <header>
-        <h1><em>NatAnimo</em></h1>
-        <p>Animelerin ve animenin ne olduğunun açıklamalarıyla dolu olan bu web siteye hoş geldiniz dostlarım.</p>
-        <nav>
-            <ul>
-                <li><a href="#ana-sayfamiz">Ana Sayfamıza Gidelim!</a></li>
-            </ul>
-        </nav>
+        <div class="page-top">
+            <div>
+                <p class="eyebrow">Anime keşfi</p>
+                <h1><em>NatAnimo</em></h1>
+                <p class="hero-note">Animeler, kısa açıklamalar ve seçilmiş temalar ile daha sade ve modern bir site deneyimi.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.1.html">Yönlendirme</a></li>
+                    <li><a href="anime_list.html">Anime Listesi</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <details>
-        <p>Burası hala çalışmıyor, daha sonra deneyin.</p>
-        <summary>Site İçin Önerilerim ve Kayıt Ol Menüsü</summary>
-        <p>Bu siteyi daha iyi bir hale getirmek için önerilerinizi bekliyorum.</p>
-        <form>
-            <label for="oneriler">Önerilerinizi Yazınız:</label>
-            <input type="text" id="oneriler" name="oneriler">
-            <button type="submit">Gönder</button>
-        </form>
-        <form>
-            <label for="kayit-ol">Kayıt Olmak için:</label>
-            <input type="text" id="kayit-ol" name="kayit-ol">
-            <button type="submit">Kayıt Ol</button>
-        </form>
-    </details>
+    <main>
+        <section class="intro-cards">
+            <div class="card">
+                <h3>NatAnimo nedir?</h3>
+                <p>Bu site, animeleri daha düzenli ve sade şekilde sunmak için hazırlanmıştır. Fazla düğme yerine işlevsel bağlantılar kullanır.</p>
+            </div>
+            <div class="card">
+                <h3>Site hedefi</h3>
+                <p>Daha az karmaşa, daha etkili gezinme ve mobil uyumlu bir kullanıcı deneyimi sunmak.</p>
+            </div>
+        </section>
 
-    <!-- Ana ekran yazıları tam genişlik cam kutular -->
-    <section class="main-cards">
-        <div class="card">
-            <h3 id="ana-sayfamiz">Ana Sayfamıza Hoşgeldiniz!</h3>
-            <p>Bu sayfada benim yazdığım animeler, anime bilgileri ve karakterler hakkında biyografi veya araştırmalar bulabilirsiniz.</p>
-            <p>Kısaca kendimi tanıtayım: Ben Fatih, 16 yaşındayım ve yazılımla uğraşan biriyim. Lisede olduğum için temel çalışmalar yapıyorum. Hayalim yazılımcı olup sessiz, sakin bir hayat kurmak. Bunun dışında iki ek hobim var: kendi Light Novel’imi yazmak ve kendi uygulama/ekosistemimi oluşturmak.</p>
-        </div>
+        <section class="quick-links">
+            <a class="link-card" href="anime_list.html">
+                <h3>100 Anime Listesi</h3>
+                <p>Tek sayfada 100 farklı anime ve her biri için bir görsel.</p>
+            </a>
+            <a class="link-card" href="naruto_anlatım.html">
+                <h3>Naruto Teması</h3>
+                <p>Naruto sayfasına git ve serinin ana temasını keşfet.</p>
+            </a>
+            <a class="link-card" href="akame_ga_kill.html">
+                <h3>Akame Ga Kill Teması</h3>
+                <p>Akame Ga Kill sayfasına git ve karanlık hikâyeyi incele.</p>
+            </a>
+        </section>
 
-        <div class="card">
-            <h3>Anime Nedir?</h3>
-            <p>Animeyi izlemeden önce animenin ne olduğunu bilmek önemlidir.</p>
-            <p>Anime, Japonya kökenli bir animasyon türüdür. Genellikle çizgi film olarak bilinse de farklı sanat stilleri ve hikâye anlatım teknikleri ile tanınır. Televizyon dizileri, filmler ve web serileri gibi çeşitli formatlarda sunulabilir. Karakterler genellikle büyük gözler, renkli saçlar ve abartılı ifadelerle tanınır. Anime, farklı yaş gruplarına hitap eden geniş bir yelpazeye sahiptir.</p>
-            <p>Örnek birkaç anime: <em>Naruto, One Piece, Dragon Ball, Attack on Titan, My Hero Academia</em>.</p>
-        </div>
-    </section>
+        <section class="image-gallery">
+            <div class="image-card">
+                <img src="Naruto.jpg" alt="Naruto">
+                <h3>Naruto</h3>
+            </div>
+            <div class="image-card">
+                <img src="onepiece.jpg" alt="One Piece">
+                <h3>One Piece</h3>
+            </div>
+            <div class="image-card">
+                <img src="aott.jpg" alt="Attack on Titan">
+                <h3>Attack on Titan</h3>
+            </div>
+            <div class="image-card">
+                <img src="myheroacedemia.jpg" alt="My Hero Academia">
+                <h3>My Hero Academia</h3>
+            </div>
+            <div class="image-card">
+                <img src="demonslayerr.jpg" alt="Demon Slayer">
+                <h3>Demon Slayer</h3>
+            </div>
+            <div class="image-card">
+                <img src="Tokyo Ghoul.jpg" alt="Tokyo Ghoul">
+                <h3>Tokyo Ghoul</h3>
+            </div>
+        </section>
+    </main>
 
-    <hr>
-
-    <!-- Anime kartları -->
-    <section class="anime-cards">
-        <div class="card">
-            <h3>Animeler Hakkında...</h3>
-            <p>Sitemizde bulunan animeler hakkında bilgiler ve araştırmalar yer almaktadır.</p>
-            <a href="index.1.html" class="btn">Detayları Gör</a>
-        </div>
-    </section>
+    <footer>
+        <div>NatAnimo | Animelerin sade, hızlı ve modern bir hâli.</div>
+        <small>Fatih tarafından hazırlanmıştır.</small>
+    </footer>
 </body>
 </html>
