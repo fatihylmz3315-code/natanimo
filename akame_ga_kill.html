@@ -4,238 +4,84 @@
     <meta charset="UTF-8">
     <title>Akame Ga Kill</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body.akame {
-            background: radial-gradient(circle at top, #2f132a 0%, #1d0d16 45%, #080406 100%);
-            color: #f0f0f0;
-            min-height: 100vh;
-        }
-
-        .akame-header {
-            position: relative;
-            padding: 100px 20px 60px;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(113, 15, 82, 0.95), rgba(24, 8, 26, 0.95));
-            box-shadow: 0 14px 45px rgba(0, 0, 0, 0.45);
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .akame-header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08), transparent 25%),
-                        radial-gradient(circle at 70% 25%, rgba(255, 60, 160, 0.16), transparent 18%);
-            pointer-events: none;
-        }
-
-        .akame-header h1,
-        .akame-header p {
-            position: relative;
-            z-index: 1;
-        }
-
-        .akame-header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #ff6bb5;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-        }
-
-        .akame-header p {
-            margin: 20px auto 0;
-            max-width: 760px;
-            line-height: 1.8;
-            color: #ddd;
-        }
-
-        .akame-sections {
-            display: grid;
-            gap: 30px;
-            margin: 0 auto 60px;
-            max-width: 1130px;
-            padding: 0 20px;
-        }
-
-        .akame-card {
-            background: rgba(20, 8, 18, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .akame-card::before {
-            content: "";
-            position: absolute;
-            top: -25px;
-            right: -40px;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: rgba(255, 107, 181, 0.08);
-        }
-
-        .akame-card h2 {
-            margin-top: 0;
-            color: #ff80c7;
-        }
-
-        .akame-card p {
-            color: #ddd;
-            line-height: 1.75;
-        }
-
-        .akame-card .tag {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .akame-header {
-                padding: 70px 15px 40px;
-            }
-
-            .akame-header h1 {
-                font-size: 2.3rem;
-            }
-
-            .akame-sections {
-                gap: 20px;
-            }
-        }
-    </style>
 </head>
 <body class="akame">
-    <header class="akame-header">
-        <h1>Akame Ga Kill</h1>
-        <p> Bu sayfada Akame Ga Kill serisinin hikayesi, karakterleri ve temaları hakkında bilgiler bulabilirsin.</p>
+    <header class="anime-page-header" style="background: linear-gradient(180deg, rgba(160,20,125,0.88), rgba(10,6,22,0.92)); color: white;">
+        <div class="page-top">
+            <div>
+                <p class="eyebrow">Akame Ga Kill</p>
+                <h1>Akame Ga Kill</h1>
+                <p class="hero-note">Bu sayfada, bir isyan, intikam ve halk kurtuluşu için savaşanların hikayesini göreceksiniz.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="akame-sections">
-        <section class="akame-card" id="akame-hikaye">
-            <h2>Akame Ga Kill Hikayesi</h2>
-            <p>Akame ga Kill! ilk bakışta klasik bir macera animesi gibi görünse de ilerledikçe çok daha sert ve karanlık bir hikâyeye dönüşüyor. Hikâye, fakir köyünü kurtarmak için başkente gelen Tatsumi'nin hayal ettiği adaletin aslında sadece bir masal olduğunu fark etmesiyle başlıyor. Dışarıdan görkemli görünen imparatorluk, içeride yozlaşmış yöneticiler, çıkar peşinde koşan soylular ve masum insanlara yapılan zulümlerle ayakta duruyor. Tatsumi de bu gerçekle yüzleştikten sonra, imparatorluğa karşı gizlice mücadele eden suikastçı grubu Night Raid'e katılarak geri dönüşü olmayan bir savaşın içine giriyor.
-
-Serinin en dikkat çeken yanı, karakterlerin gerçekten güvende hissettirmemesi. Çoğu animede ana karakterlerin son ana kadar yaşayacağını düşünürsünüz, ancak burada her görev ölüm kalım meselesidir ve en sevilen karakterler bile beklenmedik anlarda hayatını kaybedebilir. Bu durum hem izleyiciyi sürekli diken üstünde tutuyor hem de savaşın ne kadar acımasız olduğunu hissettiriyor. Hikâye boyunca kahramanlarla kötü karakterler arasındaki çizgi de zaman zaman bulanıklaşıyor; herkes kendi inandığı düzen için mücadele ediyor ve bu da çatışmaları daha gerçekçi hissettiriyor.
-
-Atmosfer ise baştan sona kasvetli ve gergin. Kanlı savaşlar, ihanetler, kayıplar ve insanların umutsuzluk içinde verdiği mücadele hikâyenin temelini oluşturuyor. Buna rağmen seri tamamen karanlığa boğulmuyor; ekip üyeleri arasındaki dostluklar, kısa süreli eğlenceli anlar ve birbirlerine duydukları güven, izleyiciye nefes aldıran sahneler sunuyor. Tam da bu yüzden yaşanan trajediler çok daha etkili oluyor; çünkü karakterleri tanıdıkça onların kayıpları sadece hikâyenin değil, izleyicinin de yükü hâline geliyor.
-
-Olay akışı genel olarak görevler üzerinden ilerlese de her görev imparatorluğun karanlık yüzünü biraz daha ortaya çıkarıyor ve finalde büyük savaşa giden yolu hazırlıyor. Karakterlerin kişisel geçmişleri, hedefleri ve fedakârlıkları hikâyeye sürekli yeni katmanlar ekliyor. Son bölümlere doğru tempo giderek yükselirken hem duygusal hem de aksiyon açısından yoğun bir finale ulaşılıyor. Bu yüzden *Akame ga Kill!*, yalnızca dövüş sahneleriyle değil, umudun ve fedakârlığın ağır bedellerini anlatan sert hikâyesiyle akılda kalan animelerden biri olarak öne çıkıyor.
-</p>
-            <span class="tag">Hikayeyi anladın, tebrikler.</span>
+    <main class="anime-page-body">
+        <section class="card">
+            <h3>Akame Ga Kill’in Hikâyesi</h3>
+            <p>Akame Ga Kill, yozlaşmış bir imparatorluğa karşı savaşan Night Raid adlı suikastçı grubunun hikâyesini anlatır. Bu grup, adaleti sağlamak ve halkı baskıdan kurtarmak için gizlice hareket eder.
+                Hikâyenin merkezinde Tatsumi adında genç bir savaşçı vardır. Köyünden ayrılıp başkente gelen Tatsumi, adaletin aslında ne kadar karmaşık olduğunu görür ve Night Raid’e katılarak kendi yolunu bulur.<br><br>
+                Akame Ga Kill, yozlaşmış bir imparatorluğa karşı savaşan Night Raid adlı suikastçı grubunun hikâyesini anlatır. Bu grup, adaleti sağlamak ve halkı baskıdan kurtarmak için gizlice hareket eder.
+                Hikâyenin merkezinde Tatsumi adında genç bir savaşçı vardır. Köyünden ayrılıp başkente gelen Tatsumi, adaletin aslında ne kadar karmaşık olduğunu görür ve Night Raid’e katılarak kendi yolunu bulur.</p>
+        </section>
+        <section class="card">
+            <h3>Akame Ga Kill’in Temaları</h3>
+            <p><strong>Adalet ve Yozlaşma: </strong>İmparatorluğun baskıcı düzeni, adaletin nasıl çarpıtılabileceğini gösterir. Night Raid’in mücadelesi, gerçek adaletin ne olduğunu sorgulatır.<br><br>
+            <strong>Fedakârlık: </strong>Karakterler, kendi hayatlarını riske atarak halk için savaşır. Bu fedakârlık, hikâyenin en güçlü duygusal yönlerinden biridir.<br><br>
+            <strong>Savaşın Bedeli: </strong>Her çatışmanın sonunda bir kayıp vardır. Seri, savaşın kahramanlık kadar acı ve trajedi getirdiğini açıkça gösterir.<br><br>
+            <strong>Bağlılık ve Dostluk: </strong>Night Raid üyeleri arasındaki bağ, onları ayakta tutan en önemli güçtür. Zor zamanlarda birbirlerine olan güvenleri, hikâyeyi daha insani kılar.<br><br>
+            <strong>Umutsuzluk ve Umut: </strong>Karanlık bir dünyada bile umut ışığı vardır. Karakterlerin mücadeleleri, en zor koşullarda bile umudun kaybolmadığını hatırlatır.
+            </p>
+        </section>
+        <section class="card">
+            <h3>Akame Ga Kill’de Unutulmaz Savaşlar</h3>
+            <p><strong>Akame Ga Kill, karanlık atmosferi ve sert çatışmalarıyla öne çıkan bir seri. Özellikle bazı savaşlar, hem duygusal yoğunluğu hem de karakterlerin kaderini belirlemesiyle unutulmaz hale gelir.</strong><br><br>
+            <strong>Akame VS Esdeath:</strong> Serinin en kritik ve en yoğun savaşlarından biri. İki güçlü karakterin karşılaşması, izleyiciler için hem heyecan hem de dramatik bir final sunar.<br><br>
+            <strong>Tatsumi VS General Budo:</strong> Tatsumi’nin azmi ve Night Raid için verdiği mücadele, bu savaşta doruğa çıkar.
+            <strong>Mine VS Seryuu:</strong> İki farklı adalet anlayışının çarpıştığı bu dövüş, serinin en trajik anlarından biridir.<br><br>
+            <strong>Night Raid VS Jeagers:</strong> İki grubun karşı karşıya geldiği bu savaşlar, hem stratejik hem de duygusal açıdan serinin en önemli bölümlerindendir.
+            <strong>Leone’nin Son Mücadelesi:</strong> Leone’nin fedakârlığı ve son anları, izleyicilerin hafızasında derin bir iz bırakır.
+            <strong>Bu savaşlar, Akame Ga Kill’in yalnızca aksiyon dolu bir anime olmadığını; aynı zamanda kayıpları, fedakârlıkları ve adaletin bedelini anlatan güçlü bir hikâye sunduğunu gösterir.</strong></p>
+        </section>
+        <section class="card">
+            <h3>Akame Ga Kill’de En Sevilen Karakterler</h3>
+            <p>
+                <strong>Akame Ga Kill, güçlü ve farklı kişiliklere sahip karakterleriyle öne çıkan bir seri. İzleyicilerin en çok bağ kurduğu ve unutamadığı bazı isimler şunlardır:</strong><br><br>
+                <strong>Akame:</strong> Sessiz, soğukkanlı ama aynı zamanda derin duygulara sahip bir suikastçı. Night Raid’in en yetenekli üyelerinden biri olarak öne çıkar.<br><br>
+                <strong>Tatsumi:</strong> Hikâyenin merkezindeki genç savaşçı. Saf adalet duygusu ve gelişim süreci, izleyicilerin kendisini kolayca benimsemesini sağlar.<br><br>
+                <strong>Esdeath:</strong> Güçlü ve acımasız bir general. Karizmatik kişiliği ve karmaşık duyguları, onu hem sevilen hem de nefret edilen bir karakter yapar.<br><br>
+                <strong>Mine:</strong> Keskin nişancı yetenekleri ve güçlü iradesiyle Night Raid’in en dikkat çekici üyelerinden biri.<br><br>
+                <strong>Leone:</strong> Neşeli tavırları ve fedakârlığıyla grubun moral kaynağıdır. Son anlarıyla izleyicilerin kalbinde özel bir yer edinir.<br><br>
+                <strong>Bulat:</strong> Tatsumi’ye yol gösteren, güçlü ve cesur bir savaşçı. Onun fedakârlığı, hikâyenin en duygusal anlarından biridir.<br><br>
+                <strong>Chelsea:</strong>  Kısa süreli varlığına rağmen zekâsı ve taktiksel yetenekleriyle unutulmaz bir iz bırakır.<br><br>
+                <strong>Bu karakterler, yalnızca dövüş sahneleriyle değil; yaşadıkları trajediler, fedakârlıklar ve kişisel yolculuklarıyla da izleyicilerin hafızasında kalıcı bir yer edinmiştir.</strong>
+            </p>
         </section>
 
-        <section class="akame-card" id="akame-karakterler">
-            <h2>Karakterler ve Güçler</h2>
-            <p>Ana Karakterler<br><br>
-
-Tatsumi<br>
-Fakir köyünü kurtarmak için başkente gelen genç bir savaşçıdır. Night Raid'e katıldıktan sonra adalet uğruna büyük savaşlar verir ve zamanla ekibin en güçlü isimlerinden biri hâline gelir.<br><br>
-
-**Akame**<br>
-Night Raid'in en tecrübeli suikastçısıdır. Soğukkanlı ve sessiz görünse de arkadaşlarına büyük değer verir. Karanlık geçmişine rağmen doğru bildiği yoldan vazgeçmez.<br><br>
-
-Mine<br>
-Keskin nişancılık konusunda ustadır. Sert ve inatçı kişiliğinin altında duygusal bir yapıya sahiptir. Savaş sırasında cesaretiyle dikkat çeker.<br><br>
-
-Leone<br>
-Ekibin en neşeli üyelerinden biridir. Güçlü fiziği ve yakın dövüş yetenekleri sayesinde ön saflarda savaşır. Takım arkadaşlarının moralini yüksek tutmaya çalışır.<br><br>
-
-Bulat<br>
-Deneyimli ve onurlu bir savaşçıdır. Tatsumi'nin gelişiminde büyük rol oynar ve ona gerçek bir ağabey gibi destek olur.<br><br>
-
-Lubbock<br>
-Tuzak kurma ve stratejik savaş konusunda uzmandır. Eğlenceli kişiliğiyle tanınsa da gerektiğinde oldukça ciddi ve zekice hamleler yapabilir.<br><br>
-
-Najenda<br>
-Night Raid'in lideridir. Eski bir imparatorluk generali olduğu için savaş konusunda oldukça deneyimlidir ve ekibin tüm planlarını yönetir.<br><br>
-
-Sheele<br>
-Sakin ve iyi niyetli bir suikastçıdır. Günlük hayatta sakar olsa da görev sırasında son derece tehlikeli bir savaşçıya dönüşür.<br><br>
-
-Chelsea<br>
-Kılık değiştirme konusunda uzman olan genç bir suikastçıdır. Sabırlı hareket ederek düşmanlarını zekâsıyla alt etmeyi tercih eder.<br><br>
-
-Susanoo<br>
-Najenda'nın Teigu'sundan ortaya çıkan insan görünümlü savaşçıdır. Sadık, güçlü ve fedakâr yapısıyla ekibin en güvenilir üyelerinden biridir.<br><br>
-
-Yan Karakterler<br><br>
-
-Wave<br>
-İmparatorluğun askerlerinden biridir. Dürüstlüğü ve adalet anlayışı sayesinde diğer askerlerden ayrılır ve doğru olanı yapmaya çalışır.<br><br>
-
-Run<br>
-Jaegers ekibinin sakin ve mantıklı üyesidir. İnsanlara yardım etmek isteyen bir karakterdir ve savaşlara her zaman sağduyuyla yaklaşır.<br><br>
-
-Kurome<br>
-Akame'nin küçük kız kardeşidir. Geçmişte yaşadığı olaylar nedeniyle imparatorluğun safında savaşmaktadır. Sessiz görünse de oldukça tehlikelidir.<br><br>
-
-Kötü Karakterler<br><br>
-
-Esdeath<br>
-İmparatorluğun en güçlü generali olarak bilinir. Gücün her şeyden üstün olduğuna inanır ve acımasız yöntemleriyle korku salar. Serinin en ikonik karakterlerinden biridir.<br><br>
-
-Seryu Ubiquitous<br>
-Adalet takıntısı yüzünden acımasızlaşmış bir askerdir. Suçlu gördüğü herkesi yok etmeyi görev bilir ve aşırı fanatik bir kişiliğe sahiptir.<br><br>
-
-Honest<br>
-İmparatorluğu perde arkasından yöneten yozlaşmış başbakandır. Halkın çektiği acıların ve ülkedeki düzenin bozulmasının en büyük sorumlusudur.<br><br>
-
-Teigu (İmparatorluk Silahları)<br><br>
-
-Incursio<br>
-Tatsumi'nin kullandığı zırhtır. Kullanıcısına yüksek hız, dayanıklılık ve fiziksel güç kazandırır. Savaşlar ilerledikçe evrim geçirerek daha da güçlenebilir.<br><br>
-
-Murasame<br>
-Akame'nin kullandığı lanetli katanadır. Kılıcın açtığı tek bir yara bile hedefin kısa süre içinde ölmesine neden olan ölümcül bir lanet taşır.<br><br>
-
-Pumpkin<br>
-Mine'ın kullandığı uzun menzilli silahtır. Kullanıcısı ne kadar zor durumda kalırsa saldırı gücü de o kadar yükselir.<br><br>
-
-Lionelle<br>
-Leone'nin kullandığı Teigu'dur. Fiziksel gücü, çevikliği ve iyileşme yeteneğini büyük ölçüde artırır.<br><br>
-
-Cross Tail<br>
-Lubbock'un görünmez tellerden oluşan silahıdır. Hem saldırı hem savunma hem de karmaşık tuzaklar kurmak için kullanılabilir.<br><br>
-
-Extase<br>
-Sheele'nin dev makasıdır. Çok sert maddeleri bile kolayca kesebilecek kadar güçlüdür.<br><br>
-
-Gaia Foundation<br>
-Chelsea'nin kullandığı Teigu'dur. Kullanıcısının görünüşünü tamamen değiştirerek farklı kişilere dönüşmesini sağlar.<br><br>
-
-Demon Extract<br>
-Esdeath'in buz gücünü sağlayan Teigu'dur. Dev buz yapıları oluşturabilir, düşmanlarını dondurabilir ve en güçlü tekniklerinden biriyle zamanı kısa süreliğine durdurabilir.<br><br>
-
-Yatsufusa<br>
-Kurome'nin kullandığı katanadır. Öldürdüğü kişileri kukla gibi yeniden kontrol ederek savaşta kullanabilir.<br><br>
-
-Grand Chariot<br>
-Wave'in kullandığı zırhtır. Incursio ile benzer özelliklere sahip olup yüksek hız ve dayanıklılık sağlar.<br><br>
-
-Koro<br>
-Seryu'nun biyolojik Teigu'sudur. Devasa bir canavara dönüşebilir, yaralarını hızla iyileştirebilir ve sahibini korumak için büyük bir güçle savaşır.<br><br>
-
-Susanoo<br>
-Canlı bir Teigu'dur. İnsan formunda savaşır, olağanüstü fiziksel güce sahiptir ve farklı savaş modlarına geçebilir.<br><br>
-
-Shambhala<br>
-Najenda'nın kullandığı Teigu'dur. Mekanik askerler çağırarak savaş alanında destek sağlar ve stratejik üstünlük kazandırır.<br>
-</p>
-            <span class="tag">Bitirdiniz, tebrikler.</span>
+        <section class="gallery-grid">
+            <div class="image-card">
+                <img src="HTML kart/akame.jpg" alt="Akame">
+                <h3>Akame</h3>
+            </div>
+            <div class="image-card">
+                <img src="HTML kart/tatsumi.jpg" alt="Tatsumi">
+                <h3>Tatsumi</h3>
+            </div>
+            <div class="image-card">
+                <img src="HTML kart/nightraid.jpg" alt="Night Raid">
+                <h3>Night Raid</h3>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div>Akame Ga Kill sayfası | NatAnimo</div>
+        <small>Fatih tarafından hazırlanmıştır.</small>
+    </footer>
 </body>
 </html>
