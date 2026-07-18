@@ -4,329 +4,100 @@
     <meta charset="UTF-8">
     <title>Naruto</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body.naruto {
-            background: radial-gradient(circle at top, #f7b924 0%, #d94d0d 40%, #1a0f2e 100%);
-            color: #fff;
-            min-height: 100vh;
-        }
-
-        .naruto-header {
-            position: relative;
-            padding: 100px 20px 60px;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(255, 122, 0, 0.95), rgba(255, 153, 51, 0.85));
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .naruto-header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.25), transparent 35%);
-            pointer-events: none;
-        }
-
-        .naruto-header h1,
-        .naruto-header p {
-            position: relative;
-            z-index: 1;
-        }
-
-        .naruto-header h1 {
-            margin: 0;
-            font-size: 3rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-        }
-
-        .naruto-header p {
-            margin: 20px auto 0;
-            max-width: 760px;
-            line-height: 1.8;
-            color: #fff;
-        }
-
-        .naruto-sections {
-            display: grid;
-            gap: 30px;
-            margin: 0 auto 60px;
-            max-width: 1130px;
-            padding: 0 20px;
-        }
-
-        .naruto-card {
-            background: rgba(0, 0, 0, 0.28);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .naruto-card::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: -40px;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .naruto-card h2 {
-            margin-top: 0;
-            color: #ffd67a;
-        }
-
-        .naruto-card p {
-            color: #f0f0f0;
-            line-height: 1.75;
-        }
-
-        .naruto-card .tag {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .naruto-header {
-                padding: 70px 15px 40px;
-            }
-
-            .naruto-header h1 {
-                font-size: 2.3rem;
-            }
-
-            .naruto-sections {
-                gap: 20px;
-            }
-        }
-    </style>
 </head>
 <body class="naruto">
-    <header class="naruto-header">
-        <h1>Naruto</h1>
-        <p>Bu sayfada Narut.'ın hikayesi, karakterleri ve temaları hakkında bilgiler bulabilirsin.</p>
+    <header class="anime-page-header" style="background: linear-gradient(180deg, rgba(255,155,0,0.88), rgba(38,6,55,0.92)); color: white;">
+        <div class="page-top">
+            <div>
+                <p class="eyebrow">Naruto</p>
+                <h1>Naruto</h1>
+                <p class="hero-note">Naruto sayfası, ninja yolculuğunu anlamanız için düzenlendi.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="naruto-sections">
-        <section class="naruto-card" id="naruto-hikaye">
-            <h2>Naruto Hikayesi</h2>
-            <p>Naruto, doğduğu gün hayatı tamamen değişen bir çocuğun hikâyesidir. Yaşadığı köye saldıran dokuz kuyruklu dev bir tilki canavarı durdurabilmek için Dördüncü Hokage, canavarı yeni doğan oğlu Naruto'nun içine mühürler ve bu sırada hayatını kaybeder. Köy kurtulur ama Naruto, daha bebekken insanların korktuğu ve uzak durduğu biri hâline gelir. Çocukluğu boyunca neden dışlandığını tam olarak bilmeden büyür. Bu yüzden herkes tarafından kabul edilmek ve bir gün köyün en güçlü lideri olan Hokage olmak en büyük hayali olur.
-
-Ninja Akademisi'nden mezun olduktan sonra Naruto, Sakura Haruno ve Sasuke Uchiha ile aynı takıma yerleştirilir. Takımlarının lideri ise oldukça deneyimli bir ninja olan Kakashi Hatake'dir. İlk başlarda üçlü sürekli tartışsa da zamanla birlikte görev yaparak birbirlerine alışırlar. Özellikle Naruto ile Sasuke arasında hem dostluk hem de rekabet içeren güçlü bir bağ oluşur.
-
-Bir süre sonra Chunin Sınavları başlar. Bu sınavlarda farklı köylerden gelen genç ninjalar hem güçlerini hem de zekâlarını gösterme fırsatı bulur. Ancak sınavlar sırasında tehlikeli olaylar yaşanır. Efsanevi suçlu Orochimaru, Sasuke'nin sahip olduğu Uchiha gücünü ele geçirmek ister ve onu karanlık tarafa çekmeye başlar. Aynı dönemde Kum Köyü ile Yaprak Köyü arasında büyük bir saldırı gerçekleşir. Bu savaş sırasında Üçüncü Hokage hayatını kaybeder.
-
-Sasuke, kardeşi Itachi'den intikam alabilmek için daha fazla güce ihtiyaç duyduğunu düşünür. Naruto ve arkadaşlarını geride bırakarak Orochimaru'nun yanına gitmeye karar verir. Naruto onu durdurmaya çalışsa da başarılı olamaz. Bu olay Naruto'nun hayatındaki en büyük dönüm noktalarından biri olur. O günden sonra hem daha güçlü olmak hem de arkadaşını geri getirmek için kendini geliştirmeye karar verir.
-
-Birkaç yıl süren eğitimin ardından hikâye Naruto Shippuden ile devam eder. Naruto artık daha olgun ve güçlü bir ninja olmuştur. Ancak dünya da eskisinden çok daha tehlikeli bir hâle gelmiştir. Akatsuki isimli gizemli örgüt, kuyruklu canavarları toplamak ve tüm dünyayı kendi planlarına göre şekillendirmek istemektedir. Naruto'nun içinde Dokuz Kuyruk bulunduğu için örgütün en önemli hedeflerinden biri hâline gelir.
-
-Bu süreçte Gaara'nın kaçırılması, Jiraiya'nın ölümü ve Pain'in Yaprak Köyü'ne saldırması gibi çok önemli olaylar yaşanır. Özellikle Pain ile yaptığı savaşta Naruto yalnızca gücünü değil, insanları anlama yeteneğini de gösterir. Savaşı kazanmasına rağmen intikam yerine barışı seçmesi, köy halkının ona bakışını tamamen değiştirir. Çocukluğunda dışlanan Naruto artık herkesin saygı duyduğu bir kahraman olur.
-
-Diğer yandan Sasuke de kendi yolunda ilerlemektedir. Kardeşi Itachi'yi öldürdükten sonra aslında gerçeklerin sandığı gibi olmadığını öğrenir. Itachi'nin, köyünü koruyabilmek için bütün suçu üstlenerek kendi ailesini öldürmek zorunda kaldığını öğrenince bu kez öfkesini Yaprak Köyü'ne yöneltir. Böylece Naruto ile Sasuke'nin yolları tamamen ayrılır.
-
-Daha sonra maskeli bir adam olan Obito Uchiha ve efsanevi ninja Madara Uchiha'nın planları ortaya çıkar. Amaçları, Sonsuz Tsukuyomi adı verilen bir teknikle bütün insanlığı sonsuz bir rüyanın içine hapsetmektir. Bunun üzerine Beş Büyük Ninja Köyü ilk kez birleşerek Dördüncü Büyük Ninja Savaşı'nı başlatır.
-
-Savaş boyunca birçok karakter hayatını kaybeder, eski düşmanlar yan yana savaşır ve yıllardır saklanan pek çok sır ortaya çıkar. Naruto, içinde taşıdığı Dokuz Kuyruk Kurama ile gerçek bir dostluk kurar ve gücünü tamamen kontrol etmeyi başarır. Sasuke de sonunda geçmişte yaptığı hataları sorgulamaya başlar ve son savaşta Naruto'nun yanında yer alır.
-
-Madara yenilmiş gibi görünse de bu kez her şeyin arkasındaki asıl isim olan Kaguya Otsutsuki ortaya çıkar. Naruto, Sasuke, Sakura ve Kakashi birlikte hareket ederek Kaguya'yı mühürlemeyi başarırlar ve dünyayı büyük bir felaketten kurtarırlar.
-
-Savaş bittikten sonra Naruto ile Sasuke arasında son bir düello gerçekleşir. İkisi de yıllardır taşıdıkları duyguları ve düşünceleri bu savaşta ortaya koyar. Çatışmanın sonunda ikisi de bir kolunu kaybeder. Naruto, dostunu ne olursa olsun vazgeçmeyeceğini gösterirken Sasuke de sonunda hatalarını kabul eder. Böylece uzun yıllar süren rekabet ve düşmanlık sona erer.
-
-Hikâyenin sonunda dünya yeniden barış dönemine girer. Sasuke, geçmişte yaptıklarının kefaretini ödemek için uzun bir yolculuğa çıkar. Naruto ise çocukluğundan beri kurduğu hayali gerçekleştirerek Yaprak Köyü'nün Yedinci Hokage'i olur. Bir zamanlar yalnız ve herkes tarafından dışlanan küçük çocuk, sonunda tüm dünyanın saygı duyduğu, arkadaşlarını ve köyünü koruyan büyük bir lidere dönüşür. Naruto'nun hikâyesi; azim, dostluk, fedakârlık, affetmek ve hiçbir zaman hayallerinden vazgeçmemek üzerine kurulu unutulmaz bir yolculuktur.
-</p>
-            <span class="tag">Beğendiysen alttakine geç↓↓</span>
+    <main class="anime-page-body">
+        <section class="card">
+            <h3>Naruto Animesinin Hikayesi</h3>
+                <p>Naruto, ninjaların yaşadığı gizli köylerde geçen uzun soluklu bir hikayeyi anlatır. Bu dünyada herkesin "çakra" adı verilen enerjiyi kullanarak farklı teknikler geliştirme gücü vardır. Hikayenin merkezinde ise Naruto Uzumaki adında, çocukluğunda yalnız büyümüş ama büyük hayalleri olan bir ninja vardır.<br><br>
+                    Naruto'nun doğduğu gece köyüne Dokuz Kuyruklu Tilki saldırır ve bu canavar onun içine mühürlenir. Bu yüzden köy halkı onu dışlar, ama Naruto pes etmez. En büyük amacı, köyün lideri olan Hokage ünvanını kazanmak ve herkes tarafından kabul edilmektir.<br><br>
+                    Zamanla Naruto, Sakura ve Sasuke ile birlikte Takım 7'ye katılır. Onların hocası Kakashi Hatake, üçlüye hem savaşmayı hemde ekip olmayı öğretir. 
+                     Bu süreçte Narutonun en büyük sınavı, Sasuke ile olan dostluğu ve rekabetidir. İkisi farklı yollar seçse de kader onları sürekli karşı karşıya getirir.
+                     <br><br>Hikaye ilerledikçe köyler arasındaki savaşlar, Akatsuki adlı suç örgüyünün planları ve büyük ninja savaşları ortaya çıkar, Naruto, her mücadelede sadece güç olarak değil, karakter olarakta büyür. Arkadaşlarını korumak için gösterdiği fedakârlık ve asla pes etmeyen tavrı, onu sıradan bir ninjadan çok daha fazlası yapar.
+                    <br><br>Sonunda Naruto, yıllarca hayalini kurduğu Hokage ünvanına ulaşır. Ama asıl başarısı, yalnızca köyünü değil, tüm ninja dünyasını birleştiren umut ve barışı getirmesidir.
+                </p>
+        </section>
+        <section class="card">
+            <h3>Naruto'nun Temaları</h3>
+            <p><strong>Naruto sadece dövüşlerden ve aksiyonlardan ibaret bir anime değil. Hikayesinin arkasında birçok güçlü tema var.</strong><br><br>
+                <strong>Dostluk ve Bağlılık:</strong> Naruto'nun Sasuke'yi geri getirme çabası, Sakura ile kurduğu bağ ve köyündeki arkadaşlıkları, dostluğun ne kadar güçlü bir motivasyon olabileceğini gösteriyor<br><br>
+                <strong>Fedakârlık:</strong> Minato ve Kushina'nın köyü korumak için hayatlarını feda etmesi, Jiraya'nın öğrencileri uğruna verdiği mücadele gibi örnekler, fedakârlığın hikayede sürekli öne çıkan bir değer olduğunu hatırlatıyor.<br><br>
+                <strong>Azim ve Pes Etmemek:</strong> Naruto'nun en belirgin özelliği, ne kadar zor durumda olursa olsun asla pes etmemesi. Bu tavır, izleyiciye umut ve kararlılık aşılıyor.<br><br>
+                <strong>Yalnızlık ve Kabul Görme:</strong> Naruto'nun çocukluğunda yaşadığı yalnızlık, insanların kabulünü kazanma isteğiyle birleşiyor. Bu tema, birçok izleyici için duygusal bir bağ kurma noktası oluşturuyor.<br><br>
+                <strong>İntikam ve Affetmek:</strong> Sasuke'nin intikam yolculuğu ile Naruto'nun affetmeyi seömesi, iki farklı yaklaşımı ortaya koyuyor. Bu karşıtlık, hikayeye derinlik katıyor.<br><br>
+                <strong>Barış ve Umut:</strong> Büyük savaşların ardından Naruto'nun asıl amacı, kalıcı barışı sağlamak. Bu, serinin en güçlü mesajlarından biri.</p>
+        </section>
+        <section class="card">
+            <h3>Naruto'daki Unutulmaz Savaşlar</h3>
+            <p><strong>Naruto serisi boyunca birçok savaş yaşanır ama bazıları izleyicilerin aklına kazınır.</strong>
+                <br><br><strong>Naruto VS Sasuke (Vadideki Son Dövüş):</strong> İki dostun kaderlerini belirleyen bu savaş, hem duygusal hemde görsel açıdan en unutulmaz anlardan biridir.
+                <br><br><strong>Pain'in Yaprak Köyü'ne Saldırısı:</strong> Köyün yerle bir olduğu bu savaşta Naruto'nun kahraman olarak yükselişi ve halk tarafından kabul edilişi öne çıkar.
+                <br><br><strong>Gaara VS Kimimaro:</strong> Chunin Sınavları sonrası yaşanan bu dövüş, Gaara'nın gücünü ve kararlılığını gösterir.
+                <br><br><strong>Sasuke VS Itachi:</strong>Kardeşler arasındaki bu savaş, yalnızca güç değil, yıllarca saklanan gerçeklerin ortaya çıkışıyla da unutulmazdır.
+                <br><br><strong>Madara'nın Beş Kage ile Mücadelesi:</strong>Serinin en güçlü düşmanlarından biri olan Madara, tek başına beş köy lideriyle savaşarak gücünü kanıtlar.
+                <br><br><strong>Naruto ve Sasuke VS Kaguya:</strong>Serinin finalinde gerçekleşen bu savaş, ninja dünyasının kaderini belirleyen en büyük mücadeledir.
+            </p>
+        </section>
+        <section class="card">
+            <h3>Naruto'nun Kültürel Etkisi</h3>
+            <p>Naruto, yalnızca bir anime serisi olarak kalmadı; dünya çapında kültürel bir fenomen haline geldi. Özellikle 2000’li yıllarda animeyi ilk kez keşfeden gençler için bir kapı açtı. Naruto’nun “asla pes etmemek” mesajı, farklı ülkelerdeki izleyicilerle güçlü bir bağ kurdu.
+                <br><br>Seri, cosplay etkinliklerinden oyunlara, müziklerden internet kültürüne kadar geniş bir alanda iz bıraktı. Naruto koşusu (Naruto Run) gibi esprili detaylar bile dünya çapında viral oldu. Ayrıca karakterlerin derinlikli hikâyeleri ve dostluk temaları, birçok hayranın kendi hayatında ilham kaynağı oldu.
+                <br><br>Bugün bile Naruto, yeni nesil animeseverler için bir başlangıç noktası olarak görülüyor. Onun hikâyesi, yalnızca Japonya’nın değil, tüm dünyanın gençlerine azim, dostluk ve umut aşılayan bir kültürel miras haline geldi.
+            </p>
+        </section>
+        <section class="card">
+            <h3>Naruto'nun En Sevilen Karakterleri</h3>
+            <p><strong>Naruto evreni yüzlerce karakter barındırıyor ama bazıları izleyicilerin kalbinde özel bir yer edindi.</strong><br><br>
+            <strong>Naruto Uzumaki:</strong>Serinin ana kahramanı. Neşesi, azmi ve asla pes etmeyen tavrı sayesinde izleyicilerin en çok bağ kurduğu karakter.<br><br>
+            <strong>Sasuke Uchia:</strong>Trajik geçmişi ve intikam yolculuğu, onu hem sevilen hem de tartışmalı bir karakter haline getiriyor.<br><br>
+            <strong>Sakura Haruno:</strong>Zekâsı ve tıbbi ninjutsu yetenekleriyle Takım 7’nin vazgeçilmez üyesi.<br><br>
+            <strong>Kakashi Hatake:</strong>Soğukkanlı tavrı, deneyimi ve Sharingan’ı ile hayranların favori hocası.<br><br>
+            <strong>Hinata Hyuga:</strong>Sessiz ve utangaç kişiliğiyle başlayan hikâyesi, Naruto’ya olan sevgisi sayesinde güçlü bir savaşçıya dönüşüyor.<br><br>
+            <strong>Gaara:</strong>Bir zamanlar yalnız ve korkulan bir jinchuuriki iken, Naruto sayesinde Kazekage olarak sevilen bir lider haline geliyor.<br><br>
+            <strong>Itachi Uchia:</strong>Kardeşi Sasuke’ye karşı yaptığı fedakârlıklar ve gizemli kişiliğiyle serinin en unutulmaz karakterlerinden biri.<br><br>
+            <strong>Jiraya:</strong>Naruto’nun hocası ve aynı zamanda bilge bir gezgin. Mizahıyla ve fedakârlığıyla izleyicilerin gönlünde taht kuruyor.<br><br>
+            <strong>Bu karakterler, yalnızca güçleriyle değil; yaşadıkları duygusal yolculuklarla da izleyicilerin hafızasında kalıcı bir iz bırakıyor.</strong></p>
         </section>
 
-        <section class="naruto-card" id="naruto-karakterler">
-            <h2>Önemli Karakterler</h2>
-            <p># Ana Karakterler
-
-Naruto Uzumaki:
-Dokuz Kuyruk'un gücünü içinde taşıyan, çocukluğunda yalnız büyümüş bir ninjadır. En büyük hayali Hokage olmak ve herkes tarafından kabul görmektir.
-<br>
-Sasuke Uchiha:
-Uchiha klanının hayatta kalan son üyelerindendir. Kardeşinden intikam almak için güç peşinde koşarken zamanla kendi doğrularını sorgular.
-<br>
-Sakura Haruno:
-Takım 7'nin en zeki üyelerinden biridir. Başlangıçta fiziksel olarak zayıf olsa da, Tsunade'nin öğrencisi olduktan sonra çok güçlü bir tıbbi ninja olur.
-<br>
-Kakashi Hatake:
-Takım 7'nin lideridir. Soğukkanlı, deneyimli ve oldukça güçlü bir jonindir. Geçmişinde yaşadığı kayıplar onu olgun bir lider hâline getirmiştir.
-<br>
----
-<br>
-Yaprak Köyü Karakterleri
-<br>
-Hinata Hyuga:
-Hyuga klanının nazik ve utangaç üyesidir. Naruto'ya çocukluğundan beri hayranlık duyar ve zamanla çok güçlü bir ninja olur.
-<br>
-Neji Hyuga:
-Hyuga klanının en yetenekli isimlerinden biridir. Kaderin değiştirilemeyeceğine inanırken Naruto sayesinde düşünceleri değişir.
-<br>
-Rock Lee:
-Ninjutsu ve genjutsu kullanamaz. Buna rağmen yalnızca taijutsu çalışarak köyün en güçlü savaşçılarından biri olmayı başarır.
-<br>
-Might Guy:
-Rock Lee'nin hocasıdır. Çalışmanın ve disiplinin gücüne inanan, enerjik ve çok güçlü bir taijutsu ustasıdır.
-<br>
-Shikamaru Nara:
-Çok yüksek zekâya sahip olmasına rağmen tembel görünür. Savaşlarda yaptığı planlarla takımını birçok kez kurtarır.
-<br>
-Ino Yamanaka:
-Zihin tekniklerinde uzmanlaşmış bir kunoichidir. Takım çalışmasına önem verir ve tıbbi ninja olarak da gelişir.
-<br>
-Choji Akimichi:
-Akimichi klanının güçlü üyesidir. Dış görünüşü nedeniyle küçümsense de arkadaşları için her şeyi göze alır.
-<br>
-Kiba Inuzuka:
-Köpeği Akamaru ile birlikte savaşır. Koku alma duyusu sayesinde iz sürme konusunda oldukça başarılıdır.
-<br>
-Akamaru:
-Kiba'nın sadık ninja köpeğidir. Savaşlarda sahibinin en büyük yardımcısı olur.
-<br>
-Shino Aburame:
-Vücudunda yaşayan böcekleri savaşta kullanan sessiz ve sakin bir ninjadır. Soğukkanlı yapısıyla dikkat çeker.
-<br>
-Tenten:
-Silah kullanımı konusunda uzmanlaşmış bir kunoichidir. Özellikle fırlatma silahlarında büyük ustalık gösterir.
-<br>
-Sai:
-Takım 7'ye sonradan katılan bir ANBU üyesidir. Duygularını ifade etmekte zorlanır ancak zamanla gerçek dostluğu öğrenir.
-<br>
-Yamato:
-Birinci Hokage'nin hücrelerinden elde edilen Odun Stili'ni kullanabilir. Naruto'nun Dokuz Kuyruk gücünü kontrol etmesine yardım eder.
-<br>
-Iruka Umino:
-Naruto'nun akademideki öğretmenidir. Naruto'yu ilk kabul eden ve ona aile sevgisini hissettiren kişidir.
-<br>
-Konohamaru Sarutobi:
-Üçüncü Hokage'nin torunudur. Naruto'yu örnek alır ve ileride güçlü bir ninja olmayı hedefler.
-<br>
----
-<br>
-Sanninler
-<br>
-Jiraiya:
-Efsanevi Üç Sannin'den biridir. Naruto'nun hocasıdır ve ona hem savaşmayı hem de hayata bakmayı öğretir.
-<br>
-Tsunade:
-Beşinci Hokage olur. Dünyanın en iyi tıbbi ninjalarından biri ve olağanüstü fiziksel güce sahip bir savaşçıdır.
-<br>
-Orochimaru:
-Bilgi ve ölümsüzlük peşinde koşan tehlikeli bir bilim insanı ve ninjadır. Yasak teknikleri kullanmaktan çekinmez.
-<br>
----
-<br>
-Kum Köyü Karakterleri
-<br>
-Gaara:
-Bir Kuyruk'un jinchuurikisidir. Çocukluğunda yalnız büyüse de Naruto sayesinde değişerek sevilen bir lidere dönüşür.
-<br>
-Temari:
-Gaara'nın ablasıdır. Dev yelpazesiyle rüzgâr tekniklerini ustalıkla kullanır.
-<br>
-Kankuro:
-Kukla tekniklerinde uzmandır. Savaşlarını özel kuklalarıyla gerçekleştirir.
-<br>
----
-<br>
-Uchiha Klanı
-<br>
-Itachi Uchiha:
-Sasuke'nin ağabeyidir. İlk başta acımasız görünse de gerçekte köyünü korumak için büyük fedakârlık yapmıştır.
-<br>
-Obito Uchiha:
-Eskiden iyi kalpli bir ninja iken yaşadığı olaylar onu karanlık tarafa sürükler. Büyük savaşın başlamasında önemli rol oynar.
-<br>
-Madara Uchiha:
-Uchiha tarihinin en güçlü isimlerinden biridir. Dünyaya kendi istediği düzeni getirmek için büyük bir savaş başlatır.
-<br>
-Shisui Uchiha:
-Itachi'nin en yakın arkadaşıdır. Çok güçlü genjutsu yetenekleriyle tanınan fedakâr bir Uchihadır.
-<br>
----
-<br>
-Hokageler
-<br>
-Hashirama Senju:
-Birinci Hokage ve Yaprak Köyü'nün kurucusudur. Odun Stili'nin tek gerçek ustası olarak bilinir.
-<br>
-Tobirama Senju:
-İkinci Hokage'dir. Birçok önemli ninjutsu geliştirmiş ve köy sisteminin temellerini oluşturmuştur.
-<br>
-Hiruzen Sarutobi:
-Üçüncü Hokage'dir. Uzun yıllar köyü yönetmiş, bilge ve deneyimli bir liderdir.
-<br>
-Minato Namikaze:
-Dördüncü Hokage ve Naruto'nun babasıdır. Sarı Şimşek lakabıyla dünyanın en hızlı ninjalarından biri olarak tanınır.
-<br>
----
-<br>
-Akatsuki Üyeleri
-<br>
-Pain (Nagato):
-Akatsuki'nin görünen lideridir. Savaşların sona ermesi için korkunun gerekli olduğuna inanır.
-<br>
-Konan:
-Nagato'nun en yakın dostudur. Kâğıt tekniklerini ustalıkla kullanır ve Akatsuki'nin kurucularındandır.
-<br>
-Kisame Hoshigaki:
-Dev Samehada kılıcını kullanan çok güçlü bir savaşçıdır. Itachi'nin uzun süre partneri olmuştur.
-<br>
-Deidara:
-Patlayıcı kil tekniklerini sanat olarak gören saldırgan bir ninjadır. Her eserinin bir patlamayla tamamlandığını düşünür.
-<br>
-Sasori:
-Kukla ustalarının en yeteneklilerindendir. Kendi bedenini bile kuklaya dönüştürerek ölümsüzlüğe yaklaşmıştır.
-<br>
-Hidan:
-Ölümsüz sayılabilecek kadar dayanıklıdır. Rakiplerini lanet ritüelleriyle öldüren fanatik bir savaşçıdır.
-<br>
-Kakuzu:
-Vücudundaki ekstra kalpler sayesinde defalarca hayatta kalabilir. Para için çalışan acımasız bir avcıdır.
-<br>
-Zetsu:
-Akatsuki'nin casusluk görevlerini yürütür. Siyah ve Beyaz Zetsu olarak iki farklı kişiliğe sahiptir.
-<br>
----
-<br>
-Diğer Önemli Karakterler
-<br>
-Kurama (Dokuz Kuyruk):
-Naruto'nun içinde mühürlü olan en güçlü kuyruklu canavardır. Başlangıçta nefret doluyken zamanla Naruto'nun en büyük dostlarından biri olur.
-<br>
-Killer Bee:
-Sekiz Kuyruk'un jinchuurikisidir. Gücünü tamamen kontrol edebilen nadir ninjalardan biridir ve Naruto'ya eğitim verir.
-<br>
-Kabuto Yakushi:
-Başlangıçta Orochimaru'nun yardımcısıdır. Zamanla kendi yolunu çizer ve savaşın en tehlikeli isimlerinden biri hâline gelir.
-<br>
-Kaguya Otsutsuki:
-Çakrayı ilk kullanan kişidir. Serinin sonunda ortaya çıkan ve dünyanın karşılaştığı en büyük tehditlerden biridir.
-<br>
-Might Duy:
-Might Guy'ın babasıdır. Hayatı boyunca küçümsense de oğluna asla pes etmemeyi öğreten fedakâr bir savaşçıdır.
-<br>
-Rin Nohara:
-Kakashi ve Obito'nun takım arkadaşıdır. Onun yaşadığı trajedi, birçok karakterin kaderini değiştiren olayların başlangıcı olur.
-<br>
-</p>
-            <span class="tag">Artık anime hakkında bilgi sahibisin, tebrik ederim!</span>
+            <section class="image-gallery">
+            <a class="image-card" href="Naruto_biyografi.html">
+                <img src="HTML kart/Naruto.jpg" alt="Naruto">
+                <h3>Naruto</h3>
+            </a>
+            
+            </div>
+            <div class="image-card">
+                <img src="HTML kart/sasuke.jpg" alt="Sasuke">
+                <h3>Sasuke</h3>
+            </div>
+            <div class="image-card">
+                <img src="HTML kart/sakura.jpg" alt="Sakura">
+                <h3>Sakura</h3>
+            </div>
+            <div class="image-card">
+                <img src="HTML kart/kakashi.jpg" alt="Kakashi">
+                <h3>Kakashi</h3>
+            </div>
         </section>
     </main>
+    <footer>
+        <div>Naruto sayfası | NatAnimo</div>
+        <small>Fatih tarafından hazırlanmıştır.</small>
+    </footer>
 </body>
 </html>
