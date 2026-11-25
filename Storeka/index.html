@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Storeka - uygulama ve oyun yaması mağazası">
+  <title>Storeka | Uygulama ve Yama Mağazası</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../site-enhancements.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="topbar" aria-label="Ana gezinme">
+      <a class="brand" href="../Giriş Sayfaları/index.html" aria-label="NatAnimo ana sayfa">
+        <span class="brand-mark"><img src="Gorseller/Storeka.1.1.png" alt=""></span>
+        <span>Storeka</span>
+      </a>
+      <a class="back-link" href="../Giriş Sayfaları/index.html">
+        <span aria-hidden="true">←</span>
+        NatAnimo
+      </a>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Yama ve uygulama mağazası</span>
+        <h1>Yama ve uygulamalar <span>tek yerde.</span></h1>
+        <p>Oyun yamalarını ve uygulamaları tek bir yerden keşfet.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-core"><img src="Gorseller/Storeka.1.1.png" alt=""></div>
+        <span class="orbit-dot dot-one"></span>
+        <span class="orbit-dot dot-two"></span>
+        <span class="orbit-dot dot-three"></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="store-section" aria-labelledby="store-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">Keşfet</span>
+          <h2 id="store-title">Mağaza</h2>
+        </div>
+        <span class="app-count" id="item-count">İçerik hazırlanıyor</span>
+      </div>
+      <div class="store-filters" role="group" aria-label="İçerik filtresi">
+        <button class="filter-button active" type="button" data-filter="all">Tümü</button>
+        <button class="filter-button" type="button" data-filter="patch">Oyun yamaları</button>
+        <button class="filter-button" type="button" data-filter="app">Uygulamalar</button>
+      </div>
+      <div class="store-controls">
+        <input id="store-search" class="store-search" type="search" placeholder="Storeka'da ara..." aria-label="Mağazada ara">
+        <select id="store-sort" class="store-sort" aria-label="Sıralama">
+          <option value="default">Varsayılan sıra</option>
+          <option value="az">İsim: A-Z</option>
+          <option value="za">İsim: Z-A</option>
+        </select>
+      </div>
+      <div class="store-grid" id="store-grid"></div>
+      <noscript>Mağazanın içeriklerini göstermek için JavaScript'i etkinleştirin.</noscript>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Storeka</span>
+      <small>Fatih tarafından tasarlandı.</small>
+    </div>
+  </footer>
+  <script src="storeka.js"></script>
+  <script src="../site-enhancements.js"></script>
+</body>
+</html>

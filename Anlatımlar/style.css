@@ -1,0 +1,492 @@
+﻿:root {
+    color-scheme: dark;
+    --bg: #06040f;
+    --bg-soft: #141227;
+    --surface: rgba(255, 255, 255, 0.08);
+    --surface-strong: rgba(255, 255, 255, 0.14);
+    --text: #f6f3ff;
+    --muted: #c9c5da;
+    --accent: #8d6dff;
+    --accent-2: #ff6aa4;
+    --border: rgba(255, 255, 255, 0.12);
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top left, rgba(141, 109, 255, 0.22), transparent 28%),
+                linear-gradient(135deg, #06040f 0%, #120c24 45%, #0d0820 100%);
+    color: var(--text);
+    line-height: 1.75;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.05), transparent 16%),
+                radial-gradient(circle at 80% 12%, rgba(255, 106, 164, 0.08), transparent 20%);
+    pointer-events: none;
+}
+
+header {
+    max-width: 1180px;
+    margin: 1rem auto 0;
+    padding: clamp(1.4rem, 3vw, 2.2rem) 1.4rem 1.3rem;
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(141,109,255,0.12));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+}
+
+.page-top { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; }
+.eyebrow {
+    display:inline-block;
+    margin-bottom:0.7rem;
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color: var(--accent-2);
+}
+header h1 { margin:0; font-size:clamp(2.2rem, 4.5vw, 3.6rem); line-height:1.05; }
+header p { max-width:780px; margin:0.95rem 0 0; color:var(--muted); }
+nav { margin-top: 1rem; }
+nav ul { display:flex; flex-wrap:wrap; gap:0.5rem; padding:0; margin:0; list-style:none; }
+nav a {
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:110px; padding:0.6rem 0.9rem; border-radius:999px;
+    background: rgba(255,255,255,0.08); color:var(--text); text-decoration:none; border:1px solid transparent;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+nav a:hover, nav a:focus-visible { transform: translateY(-1px); background: rgba(141,109,255,0.16); border-color: rgba(141,109,255,0.28); }
+
+main { max-width:1180px; margin:0 auto; padding:0 1.4rem 3rem; }
+.hero-note { margin-top:1rem; color:var(--muted); }
+.section-head { display:flex; justify-content:space-between; align-items:end; gap:1rem; flex-wrap:wrap; margin:1.6rem 0 1rem; }
+.section-head h2 { margin:0; font-size:1.25rem; }
+.section-head p { margin:0; color:var(--muted); }
+.hero-panel {
+    margin:1.5rem 0 1.2rem;
+    padding:1.2rem 1.3rem;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(135deg, rgba(141,109,255,0.18), rgba(255,106,164,0.12));
+    box-shadow: 0 16px 42px rgba(0,0,0,0.18);
+}
+.hero-panel h2 { margin:0.1rem 0 0.4rem; font-size:1.4rem; }
+.hero-panel p { margin:0; color:var(--muted); }
+.badge {
+    display:inline-block; padding:0.35rem 0.7rem; border-radius:999px; font-size:0.78rem; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase; background: rgba(255,255,255,0.12); color:#fff;
+}
+
+.intro-cards, .quick-links, .image-gallery, .anime-list, .theme-links, .gallery-grid, .content-grid { display:grid; gap:1rem; margin:1.3rem auto; }
+.intro-cards, .quick-links, .theme-links, .content-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card, .link-card, .image-card, .anime-card, .content-card {
+    position:relative; border-radius:24px; overflow:hidden; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 16px 42px rgba(0,0,0,0.16); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card, .link-card, .content-card { padding:1.25rem; }
+.card:hover, .link-card:hover, .image-card:hover, .anime-card:hover, .content-card:hover {
+    transform: translateY(-2px); border-color: rgba(141,109,255,0.28); box-shadow: 0 20px 52px rgba(0,0,0,0.22);
+}
+.card h3, .link-card h3, .image-card h3, .anime-card h3, .content-card h3 { margin:0 0 0.6rem; font-size:clamp(1.05rem, 2vw, 1.3rem); }
+.card p, .link-card p, .anime-card p, .content-card p { margin:0; color:var(--muted); line-height:1.65; font-size:0.97rem; }
+.link-card { text-decoration:none; color:inherit; min-height:150px; display:flex; flex-direction:column; justify-content:center; }
+.content-card ul { margin:0.3rem 0 0; padding-left:1rem; color:var(--muted); }
+.content-card li { margin:0.3rem 0; }
+.quote { padding:1rem 1.15rem; border-radius:18px; background: rgba(255,255,255,0.05); color:var(--text); border:1px solid rgba(255,255,255,0.09); }
+.image-gallery { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.image-card img, .anime-card img { width:100%; height:200px; object-fit:cover; display:block; }
+.image-card h3 { position:absolute; left:1rem; bottom:1rem; margin:0; color:#fff; text-shadow:0 14px 30px rgba(0,0,0,0.55); font-size:1rem; }
+.search-area { margin-top:1.5rem; }
+.search-input { width:100%; border-radius:18px; border:1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color:var(--text); padding:0.75rem 0.9rem; font-size:0.95rem; }
+.anime-list { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:0.8rem; }
+footer { max-width:1180px; margin:0 auto; padding:0 1.4rem 2.4rem; color:var(--muted); font-size:0.95rem; }
+footer div { margin-bottom:0.3rem; }
+
+.anime-list .anime-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.anime-list .anime-card:hover {
+    transform: translateY(-1px);
+    border-color: rgba(141, 109, 255, 0.25);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.2);
+}
+
+.anime-list .anime-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.anime-list .anime-card h3 {
+    padding: 0.6rem 0.7rem;
+    background: rgba(11, 8, 24, 0.9);
+    color: var(--text);
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+footer {
+    max-width: 1130px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+footer small {
+    display: block;
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+body.naruto,
+body.akame {
+    min-height: 100vh;
+}
+
+.anime-page-header {
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3.5rem) 1.5rem;
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+}
+
+.anime-page-header nav a {
+    min-width: 120px;
+}
+
+.anime-page-header h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+}
+
+.anime-page-header p {
+    max-width: 760px;
+    margin: 1rem 0 0;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.anime-page-header .page-top {
+    align-items: flex-start;
+}
+
+.anime-page-header nav {
+    margin-top: 1rem;
+}
+
+.anime-page-body {
+    max-width: 1130px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.anime-page-body .anime-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.anime-page-body .card {
+    margin-top: 1.25rem;
+}
+
+.anime-page-body .card {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (max-width: 860px) {
+    header,
+    .anime-page-header,
+    main,
+    .anime-page-body,
+    footer {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .page-top {
+        gap: 0.85rem;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 1.5rem 1rem 1.2rem;
+        border-radius: 24px;
+    }
+    .page-top {
+        flex-direction: column;
+    }
+    nav a {
+        padding: 0.65rem 0.85rem;
+        min-width: auto;
+    }
+    .intro-cards,
+    .quick-links,
+    .theme-links,
+    .anime-list,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .search-input {
+        font-size: 0.96rem;
+    }
+    .anime-card h3 {
+        font-size: 1rem;
+    }
+}
+
+.light-mode {
+    --bg: #f8f9ff;
+    --bg-soft: #f4f5fc;
+    --surface: rgba(18, 20, 40, 0.08);
+    --surface-strong: rgba(18, 20, 40, 0.12);
+    --text: #151728;
+    --muted: #66708a;
+    --accent: #6b62ff;
+    --accent-2: #ff5c9e;
+    --border: rgba(21, 25, 43, 0.12);
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+    background: radial-gradient(circle at top, rgba(141, 109, 255, 0.08), transparent 28%),
+                linear-gradient(180deg, #f8f9ff 0%, #e8e9fa 45%, #eef0fc 100%);
+}
+
+/* 🔥 Redline Anime Teması */
+body.redline {
+    --bg: #0a0a0a;
+    --bg-soft: #1a1a1a;
+    --surface: rgba(255, 0, 0, 0.08);
+    --surface-strong: rgba(255, 0, 0, 0.14);
+    --text: #ff1c1c;
+    --muted: #ffd700;
+    --accent: #ff1c1c;
+    --accent-2: #ffd700;
+    --border: rgba(255, 0, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 0, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 28, 28, 0.2), transparent 30%),
+                linear-gradient(180deg, #0a0a0a 0%, #1a0000 45%, #000000 100%);
+    color: var(--text);
+}
+
+/* Başlıklar neon efektli */
+body.redline h1, 
+body.redline h2, 
+body.redline h3 {
+    color: var(--accent-2);
+    text-shadow: 0 0 10px #ff1c1c, 0 0 20px #ffd700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Butonlar yarış havasında */
+body.redline button {
+    background: linear-gradient(90deg, #ff1c1c, #ffd700);
+    border: none;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #ff1c1c;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.redline button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ffd700, 0 0 40px #ff1c1c;
+}
+
+/* Kartlar neon kenarlıklı */
+body.redline .card,
+body.redline .anime-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid #ff1c1c;
+    box-shadow: 0 0 20px #ff1c1c;
+    transition: transform 0.3s ease;
+}
+
+body.redline .card:hover,
+body.redline .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ffd700;
+    
+}
+/* Redline hız çizgileri animasyonu */
+body.redline::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 28, 28, 0.2) 0px,
+        rgba(255, 28, 28, 0.2) 2px,
+        transparent 2px,
+        transparent 6px
+    );
+    animation: speedlines 0.5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animasyon hareketi */
+@keyframes speedlines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 0;
+    }
+}
+/* Naruto Anime Teması */
+body.naruto {
+    --bg: #1a0d00;
+    --bg-soft: #2a1400;
+    --surface: rgba(255, 165, 0, 0.08);
+    --surface-strong: rgba(255, 165, 0, 0.14);
+    --text: #ffd27f;
+    --muted: #ffcc99;
+    --accent: #ff9900;
+    --accent-2: #00aaff;
+    --border: rgba(255, 165, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 140, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 165, 0, 0.2), transparent 30%),
+                linear-gradient(180deg, #1a0d00 0%, #331a00 45%, #000000 100%);
+    color: var(--text);
+}
+
+/* Başlıklar ninja enerjisi */
+body.naruto h1, 
+body.naruto h2, 
+body.naruto h3 {
+    color: var(--accent-2);
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #00aaff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Akame Ga Kill Anime Teması */
+body.akame {
+    --bg: #0d0d0d;
+    --bg-soft: #1a0d0d;
+    --surface: rgba(255, 0, 0, 0.08);
+    --surface-strong: rgba(255, 0, 0, 0.14);
+    --text: #ffcccc;
+    --muted: #ff9999;
+    --accent: #cc0000;
+    --accent-2: #660000;
+    --border: rgba(255, 0, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 0, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.2), transparent 30%),
+                linear-gradient(180deg, #0d0d0d 0%, #1a0d0d 45%, #000000 100%);
+    color: var(--text);
+}
+
+/* Başlıklar kanlı neon efekti */
+body.akame h1, 
+body.akame h2, 
+body.akame h3 {
+    color: var(--accent);
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #660000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Naruto çakra dalgaları animasyonu */
+body.naruto::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 30% 40%, rgba(255,165,0,0.25) 0%, transparent 60%),
+        radial-gradient(circle at 70% 60%, rgba(0,170,255,0.25) 0%, transparent 60%);
+    background-repeat: no-repeat;
+    background-size: 200px 200px, 250px 250px;
+    animation: chakraPulse 6s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes chakraPulse {
+    from {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    to {
+        transform: scale(1.3);
+        opacity: 0.9;
+    }
+}
+/* Golden Boy Anime Teması */
+body.goldenboy {
+    --bg: #fff8e1;
+    --bg-soft: #fbe9e7;
+    --surface: rgba(244, 197, 66, 0.08);
+    --surface-strong: rgba(244, 197, 66, 0.14);
+    --text: #333333;
+    --muted: #6b5e3c;
+    --accent: #f4c542;
+    --accent-2: #e0a800;
+    --border: rgba(244, 197, 66, 0.25);
+    --shadow: 0 24px 80px rgba(244, 197, 66, 0.35);
+
+    background: radial-gradient(circle at center, rgba(244, 197, 66, 0.2), transparent 30%),
+                linear-gradient(180deg, #fff8e1 0%, #fbe9e7 45%, #fff3cd 100%);
+    color: var(--text);
+}
+
+/* Başlıklar altın efektli */
+body.goldenboy h1, 
+body.goldenboy h2, 
+body.goldenboy h3 {
+    color: var(--accent);
+    text-shadow: 0 0 10px #f4c542, 0 0 20px #e0a800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Kartlar altın kenarlıklı */
+body.goldenboy .card,
+body.goldenboy .anime-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #f4c542;
+    box-shadow: 0 0 20px #f4c542;
+    transition: transform 0.3s ease;
+}
+
+body.goldenboy .card:hover,
+body.goldenboy .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #e0a800;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Listesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../modern.css">
+    <link rel="stylesheet" href="../site-enhancements.css">
+</head>
+<body>
+    <header>
+        <div class="page-top">
+            <div>
+                <p class="eyebrow">Anime rehberi</p>
+                <h1><em>Anime Listesi</em></h1>
+                <p class="hero-note">Aradığın seriyi bulmak için ismini yazabilir ya da listeyi ada göre sıralayabilirsin.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.1.html">Yönlendirme</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-area">
+            <input id="search" class="search-input" type="search" placeholder="Anime ara...">
+            <select id="sort-anime" class="search-input" aria-label="Anime sıralama">
+                <option value="default">Varsayılan sıra</option>
+                <option value="az">A'dan Z'ye</option>
+                <option value="za">Z'den A'ya</option>
+            </select>
+        </section>
+
+        <section class="anime-list" id="animeGrid"></section>
+    </main>
+
+    <footer>
+        <div>Tüm Animelerimiz | NatAnimo</div>
+        <small>Fatih tarafından hazırlanmıştır.</small>
+    </footer>
+
+    <script>
+        const availableImages = {
+            "Naruto": "../Resimler/Naruto.jpg",
+            "One Piece": "../Resimler/onepiece.jpg",
+            "Attack on Titan": "../Resimler/aott.jpg",
+            "My Hero Academia": "../Resimler/myheroacedemia.jpg",
+            "Demon Slayer": "../Resimler/demonslayerr.jpg",
+            "Tokyo Ghoul": "../Resimler/Tokyo Ghoul.jpg",
+            "Black Clover": "../Resimler/Black Clover.jpg",
+            "Fairy Tail": "../Resimler/Fairy Tail.jpg",
+            "Bleach": "../Resimler/bleach.jpg",
+            "Hunter x Hunter": "../Resimler/hunterxhunter.jpg",
+            "Fullmetal Alchemist": "../Resimler/fullmetal.jpg",
+            "Tokyo Revengers": "../Resimler/Tokyo Revengers_ Toman.jpg",
+            "Jujutsu Kaisen": "../Resimler/jujutsukaisen.jpg",
+            "Mob Psycho 100": "../Resimler/mobpyscho100.jpg",
+            "Death Note": "../Resimler/deathnote.jpg",
+            "Code Geass": "../Resimler/codegeas.jpg",
+            "Steins;Gate": "../Resimler/steinsgate.jpg",
+            "Haikyuu!": "../Resimler/Haikyu!!.jpg",
+            "Sword Art Online": "../Resimler/swordart.jpg",
+            "Your Name": "../Resimler/Your Name.jpg",
+            "Violet Evergarden": "../Resimler/violet.jpg",
+            "Re:Zero": "../Resimler/rezero.jpg",
+            "Kaguya-sama: Love is War": "../Resimler/kaguyasama.jpg",
+            "No Game No Life": "../Resimler/nogame.jpg",
+            "One Punch Man": "../Resimler/onepunch.jpg",
+            "Seven Deadly Sins": "../Resimler/sevendeadly.jpg",
+            "Black Lagoon": "../Resimler/blacklagoon.jpg",
+            "Akira": "../Resimler/Akira.jpg",
+            "Ghost in the Shell": "../Resimler/ghostinshell.jpg",
+            "Weathering with You": "../Resimler/weather.jpg",
+            "Spirited Away": "../Resimler/spireited.jpg",
+            "Howl's Moving Castle": "../Resimler/howlsmoving.jpg",
+            "Princess Mononoke": "../Resimler/priencs.jpg",
+            "Cowboy Bebop": "../Resimler/covboy.jpg",
+            "Samurai Champloo": "../Resimler/samurai.jpg",
+            "Erased": "../Resimler/Erased.jpg",
+            "Gintama": "../Resimler/gintama.jpg",
+            "Clannad": "../Resimler/clannad.jpg",
+            "Toradora!": "../Resimler/toradora.jpg",
+            "Anohana": "../Resimler/anohona.jpg",
+            "Made in Abyss": "../Resimler/madeinabyss.jpg",
+            "Fruits Basket": "../Resimler/fruitsbasket.jpg",
+            "Elfen Lied": "../Resimler/elfenlefield.jpg",
+            "Parasyte": "../Resimler/parasytle.jpg",
+            "Great Pretender": "../Resimler/Great Pretender.jpg",
+            "Yuri on Ice": "../Resimler/yurionice.jpg",
+            "K-On!": "../Resimler/kon.jpg",
+            "ReLIFE": "../Resimler/relıfe.jpg",
+            "Black Butler": "../Resimler/blackbutler.jpg",
+            "Fate/Zero": "../Resimler/fatezero.jpg",
+            "Fate/Stay Night": "../Resimler/fatestaynight.jpg",
+            "Rascal Does Not Dream of Bunny Girl Senpai": "../Resimler/bunnygirl.jpg",
+            "Berserk": "../Resimler/berserk.jpg",
+            "JoJo's Bizarre Adventure": "../Resimler/jojobizarre.jpg",
+            "The Promised Neverland": "../Resimler/promisedneverland.jpg",
+            "Your Lie in April": "../Resimler/yourlie.jpg",
+            "The Rising of the Shield Hero": "../Resimler/shieldhero.jpg",
+            "Dorohedoro": "../Resimler/dorohedoro.jpg",
+            "Psycho-Pass": "../Resimler/pyschopats.jpg",
+            "Akame ga Kill": "../Resimler/akamegakill.jpg",
+            "Blue Exorcist": "../Resimler/blueexorcist.jpg",
+            "Death Parade": "../Resimler/deathparade.jpg",
+            "Hellsing Ultimate": "../Resimler/hellsing.jpg",
+            "The Boy and the Beast": "../Resimler/boyandbeat.jpg",
+            "Summer Wars": "../Resimler/summerwars.jpg",
+            "Tengen Toppa Gurren Lagann": "../Resimler/tengentoppa.jpg",
+            "Kill la Kill": "../Resimler/killlakill.jpg",
+            "Little Witch Academia": "../Resimler/littlewitch.jpg",
+            "Kakegurui": "../Resimler/kakegurui.jpg",
+            "Nausicaä of the Valley of the Wind": "../Resimler/nausica.jpg",
+            "Paprika": "../Resimler/paprika.jpg",
+            "The Wind Rises": "../Resimler/thewind.jpg",
+            "Suzume": "../Resimler/suzume.jpg",
+            "Made in Abyss: The Golden City of the Scorching Sun": "../Resimler/madeinabbys.jpg",
+            "Spy x Family": "../Resimler/spyxfamily.jpg",
+            "The Ancient Magus' Bride":  "../Resimler/theanticent.jpg",
+            "Aggretsuko": "../Resimler/agretsuko.jpg",
+            "Fate/Apocrypha": "../Resimler/aporcyt.jpg",
+            "Beastars": "../Resimler/beastars.jpg",
+            "Kino's Journey": "../Resimler/kinos.jpg",
+            "A Silent Voice": "../Resimler/asilent.jpg",
+            "The Devil is a Part-Timer!": "../Resimler/parttime.jpg",
+            "Oshi no Ko": "../Resimler/oshinoko.jpg",
+            "The Quintessential Quintuplets": "../Resimler/thequint.jpg",
+            "Dr. Stone": "../Resimler/drstone.jpg",
+            "Re:Creators": "../Resimler/recreator.jpg",
+            "Deca-Dence": "../Resimler/decadance.jpg",
+            "Made in Abyss: Dawn of the Deep Soul": "../Resimler/madeinabbysdovn.jpg",
+            "Komi Can't Communicate": "../Resimler/komicant.jpg",
+            "Terror in Resonance": "../Resimler/teror.jpg",
+            "Vivy -Fluorite Eye's Song-": "../Resimler/vivy.jpg",
+            "Monster": "../Resimler/monster.jpg",
+            "Spice and Wolf": "../Resimler/spiceand.jpg",
+            "Yona of the Dawn": "../Resimler/yonaof.jpg",
+            "Golden Time": "../Resimler/goldentime.jpg",
+            "Redline Pilot": "../Resimler/redline.jpg", 
+            "Golden Boy": "../Resimler/goldenboy.jpg"
+        };
+
+        const detailLinks = {
+            "Naruto": "../Anlatımlar/naruto_anlatım.html",
+            "One Piece": "../Anlatımlar/one_piece_anlatım.html",
+            "Attack on Titan": "../Anlatımlar/attack_on_titan_anlatım.html",
+            "Akame ga Kill": "../Anlatımlar/akame_ga_kill.html",
+            "Redline Pilot": "../Anlatımlar/Redline.html",
+            "Golden Boy": "../Anlatımlar/goldenboyy.html"
+        };
+
+        const animeTitles = [
+            "Naruto",
+            "One Piece",
+            "Attack on Titan",
+            "My Hero Academia",
+            "Demon Slayer",
+            "Tokyo Ghoul",
+            "Black Clover",
+            "Fairy Tail",
+            "Bleach",
+            "Hunter x Hunter",
+            "Fullmetal Alchemist",
+            "Tokyo Revengers",
+            "Jujutsu Kaisen",
+            "Mob Psycho 100",
+            "Death Note",
+            "Code Geass",
+            "Steins;Gate",
+            "Haikyuu!",
+            "Sword Art Online",
+            "Your Name",
+            "Violet Evergarden",
+            "Re:Zero",
+            "Kaguya-sama: Love is War",
+            "No Game No Life",
+            "One Punch Man",
+            "Seven Deadly Sins",
+            "Black Lagoon",
+            "Akira",
+            "Ghost in the Shell",
+            "Weathering with You",
+            "Spirited Away",
+            "Howl's Moving Castle",
+            "Princess Mononoke",
+            "Cowboy Bebop",
+            "Samurai Champloo",
+            "Erased",
+            "Gintama",
+            "Clannad",
+            "Toradora!",
+            "Anohana",
+            "Made in Abyss",
+            "Fruits Basket",
+            "Elfen Lied",
+            "Parasyte",
+            "Great Pretender",
+            "Yuri on Ice",
+            "K-On!",
+            "ReLIFE",
+            "Black Butler",
+            "Fate/Zero",
+            "Fate/Stay Night",
+            "Rascal Does Not Dream of Bunny Girl Senpai",
+            "Berserk",
+            "JoJo's Bizarre Adventure",
+            "The Promised Neverland",
+            "Your Lie in April",
+            "The Rising of the Shield Hero",
+            "Dorohedoro",
+            "Psycho-Pass",
+            "Akame ga Kill",
+            "Blue Exorcist",
+            "Death Parade",
+            "Hellsing Ultimate",
+            "The Boy and the Beast",
+            "Summer Wars",
+            "Tengen Toppa Gurren Lagann",
+            "Kill la Kill",
+            "Little Witch Academia",
+            "Kakegurui",
+            "Nausicaä of the Valley of the Wind",
+            "Paprika",
+            "The Wind Rises",
+            "Suzume",
+            "Made in Abyss: The Golden City of the Scorching Sun",
+            "Spy x Family",
+            "The Ancient Magus' Bride",
+            "Aggretsuko",
+            "Fate/Apocrypha",
+            "Beastars",
+            "Kino's Journey",
+            "A Silent Voice",
+            "The Devil is a Part-Timer!",
+            "Oshi no Ko",
+            "The Quintessential Quintuplets",
+            "Dr. Stone",
+            "Re:Creators",
+            "Deca-Dence",
+            "Made in Abyss: Dawn of the Deep Soul",
+            "Komi Can't Communicate",
+            "Terror in Resonance",
+            "Vivy -Fluorite Eye's Song-",
+            "Monster",
+            "Spice and Wolf",
+            "Yona of the Dawn",
+            "Golden Time",
+            "Redline Pilot",
+            "Golden Boy"
+        ];
+
+        const grid = document.getElementById('animeGrid');
+
+        function createCard(title) {
+            const link = detailLinks[title];
+            const card = document.createElement(link ? 'a' : 'article');
+            card.className = 'anime-card';
+            if (link) {
+                card.href = link;
+            }
+            const src = availableImages[title] || '../Resimler/logo.1.png';
+            card.innerHTML = `
+                <img src="${src}" alt="${title}" loading="lazy">
+                <h3>${title}</h3>
+            `;
+            return card;
+        }
+
+        function renderList(items) {
+            grid.innerHTML = '';
+            items.forEach(title => grid.appendChild(createCard(title)));
+        }
+
+        renderList(animeTitles);
+
+        function getFilteredTitles() {
+            const query = document.getElementById('search').value.trim().toLocaleLowerCase('tr');
+            const sort = document.getElementById('sort-anime').value;
+            let items = animeTitles.filter(title => title.toLocaleLowerCase('tr').includes(query));
+            if (sort === 'az') items = [...items].sort((a, b) => a.localeCompare(b, 'tr'));
+            if (sort === 'za') items = [...items].sort((a, b) => b.localeCompare(a, 'tr'));
+            return items;
+        }
+
+        document.getElementById('search').addEventListener('input', () => renderList(getFilteredTitles()));
+        document.getElementById('sort-anime').addEventListener('change', () => renderList(getFilteredTitles()));
+    </script>
+<script src="../site-enhancements.js"></script>
+</body>
+</html>

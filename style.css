@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     color-scheme: dark;
     --bg: #0b0818;
     --bg-soft: #17122b;
@@ -428,27 +428,211 @@ body.akame {
                 linear-gradient(180deg, #f8f9ff 0%, #e8e9fa 45%, #eef0fc 100%);
 }
 
-.light-mode body {
+/* 🔥 Redline Anime Teması */
+body.redline {
+    --bg: #0a0a0a;
+    --bg-soft: #1a1a1a;
+    --surface: rgba(255, 0, 0, 0.08);
+    --surface-strong: rgba(255, 0, 0, 0.14);
+    --text: #ff1c1c;
+    --muted: #ffd700;
+    --accent: #ff1c1c;
+    --accent-2: #ffd700;
+    --border: rgba(255, 0, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 0, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 28, 28, 0.2), transparent 30%),
+                linear-gradient(180deg, #0a0a0a 0%, #1a0000 45%, #000000 100%);
     color: var(--text);
 }
 
-.light-mode header,
-.light-mode .anime-page-header,
-.light-mode .card,
-.light-mode .link-card,
-.light-mode .image-card,
-.light-mode .anime-card,
-.light-mode footer {
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--text);
-    border-color: rgba(21, 25, 43, 0.06);
+/* Başlıklar neon efektli */
+body.redline h1, 
+body.redline h2, 
+body.redline h3 {
+    color: var(--accent-2);
+    text-shadow: 0 0 10px #ff1c1c, 0 0 20px #ffd700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.light-mode nav a {
-    background: rgba(21, 25, 43, 0.06);
+/* Butonlar yarış havasında */
+body.redline button {
+    background: linear-gradient(90deg, #ff1c1c, #ffd700);
+    border: none;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #ff1c1c;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.redline button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ffd700, 0 0 40px #ff1c1c;
+}
+
+/* Kartlar neon kenarlıklı */
+body.redline .card,
+body.redline .anime-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid #ff1c1c;
+    box-shadow: 0 0 20px #ff1c1c;
+    transition: transform 0.3s ease;
+}
+
+body.redline .card:hover,
+body.redline .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ffd700;
+    
+}
+/* Redline hız çizgileri animasyonu */
+body.redline::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255, 28, 28, 0.2) 0px,
+        rgba(255, 28, 28, 0.2) 2px,
+        transparent 2px,
+        transparent 6px
+    );
+    animation: speedlines 0.5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animasyon hareketi */
+@keyframes speedlines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 0;
+    }
+}
+/* Naruto Anime Teması */
+body.naruto {
+    --bg: #1a0d00;
+    --bg-soft: #2a1400;
+    --surface: rgba(255, 165, 0, 0.08);
+    --surface-strong: rgba(255, 165, 0, 0.14);
+    --text: #ffd27f;
+    --muted: #ffcc99;
+    --accent: #ff9900;
+    --accent-2: #00aaff;
+    --border: rgba(255, 165, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 140, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 165, 0, 0.2), transparent 30%),
+                linear-gradient(180deg, #1a0d00 0%, #331a00 45%, #000000 100%);
     color: var(--text);
 }
 
-.light-mode .theme-toggle {
-    background: rgba(21, 25, 43, 0.08);
+/* Başlıklar ninja enerjisi */
+body.naruto h1, 
+body.naruto h2, 
+body.naruto h3 {
+    color: var(--accent-2);
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #00aaff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Akame Ga Kill Anime Teması */
+body.akame {
+    --bg: #0d0d0d;
+    --bg-soft: #1a0d0d;
+    --surface: rgba(255, 0, 0, 0.08);
+    --surface-strong: rgba(255, 0, 0, 0.14);
+    --text: #ffcccc;
+    --muted: #ff9999;
+    --accent: #cc0000;
+    --accent-2: #660000;
+    --border: rgba(255, 0, 0, 0.25);
+    --shadow: 0 24px 80px rgba(255, 0, 0, 0.35);
+
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.2), transparent 30%),
+                linear-gradient(180deg, #0d0d0d 0%, #1a0d0d 45%, #000000 100%);
+    color: var(--text);
+}
+
+/* Başlıklar kanlı neon efekti */
+body.akame h1, 
+body.akame h2, 
+body.akame h3 {
+    color: var(--accent);
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #660000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Naruto çakra dalgaları animasyonu */
+body.naruto::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 30% 40%, rgba(255,165,0,0.25) 0%, transparent 60%),
+        radial-gradient(circle at 70% 60%, rgba(0,170,255,0.25) 0%, transparent 60%);
+    background-repeat: no-repeat;
+    background-size: 200px 200px, 250px 250px;
+    animation: chakraPulse 6s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes chakraPulse {
+    from {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    to {
+        transform: scale(1.3);
+        opacity: 0.9;
+    }
+}
+/* Golden Boy Anime Teması */
+body.goldenboy {
+    --bg: #fff8e1;
+    --bg-soft: #fbe9e7;
+    --surface: rgba(244, 197, 66, 0.08);
+    --surface-strong: rgba(244, 197, 66, 0.14);
+    --text: #333333;
+    --muted: #6b5e3c;
+    --accent: #f4c542;
+    --accent-2: #e0a800;
+    --border: rgba(244, 197, 66, 0.25);
+    --shadow: 0 24px 80px rgba(244, 197, 66, 0.35);
+
+    background: radial-gradient(circle at center, rgba(244, 197, 66, 0.2), transparent 30%),
+                linear-gradient(180deg, #fff8e1 0%, #fbe9e7 45%, #fff3cd 100%);
+    color: var(--text);
+}
+
+/* Başlıklar altın efektli */
+body.goldenboy h1, 
+body.goldenboy h2, 
+body.goldenboy h3 {
+    color: var(--accent);
+    text-shadow: 0 0 10px #f4c542, 0 0 20px #e0a800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Kartlar altın kenarlıklı */
+body.goldenboy .card,
+body.goldenboy .anime-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #f4c542;
+    box-shadow: 0 0 20px #f4c542;
+    transition: transform 0.3s ease;
+}
+
+body.goldenboy .card:hover,
+body.goldenboy .anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #e0a800;
 }
